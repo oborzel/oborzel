@@ -11,14 +11,16 @@
 		<input type="submit" value="Submit" id="submit" />
 	</form>
 	<script>
-		const btn = document.getElementById('submit');
-		btn.on('click', (event) => {
-			event.preventDefault();
-			fetch('https://teamloader.com/api/messages', {
-				method: 'POST',
-				body: document.getElementById('message').value
-			});
-		});
+		window.onload = () => {
+			const form = document.getElementById('form');
+				form.addEventListener('submit', (event) => {
+					event.preventDefault();
+					fetch('https://teamloader.com/api/messages', {
+						method: 'POST',
+						body: document.getElementById('message').value
+					});
+				});
+		}
 	</script>
 </body>
 </html>
