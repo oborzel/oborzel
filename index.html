@@ -7,12 +7,12 @@
 <body>
 	<form id="form">
 		<label>Message</label>
-		<textarea></textarea>
-		<input type="submit" value="Submit" id="message"/>
+		<textarea id="message"></textarea>
+		<input type="submit" value="Submit" id="submit" />
 	</form>
 	<script>
-		const form = document.getElementById('form');
-		form.on('submit', (event) => {
+		const btn = document.getElementById('submit');
+		submit.on('click', (event) => {
 			event.preventDefault();
 			fetch('https://teamloader.com/api/messages', {
 				method: 'POST',
