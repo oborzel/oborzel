@@ -5,6 +5,20 @@
 	<title>Oborzel</title>
 </head>
 <body>
-Hello world!!!
+	<form id="form">
+		<label>Message</label>
+		<textarea></textarea>
+		<input type="submit" value="Submit" id="message"/>
+	</form>
+	<script>
+		const form = document.getElementById('form');
+		form.on('submit', (event) => {
+			event.preventDefault();
+			fetch('https://teamloader.com/api/messages', {
+				method: 'POST',
+				body: document.getElementById('message').value;
+			});
+		});
+	</script>
 </body>
 </html>
